@@ -1,0 +1,59 @@
+
+/*=============================================
+=                  Resets                     =
+=============================================*/
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/*=============================================
+=                 Layout                      =
+=============================================*/
+
+.container {
+    /* padding-left:  */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/*=============================================
+=                 Sections                    =
+=============================================*/
+
+.header-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #018fff;
+    color: #fff;
+}
+
+.header-main__logo {
+    color: #fff;
+}
+
+.footer-main {
+    flex-shrink: 0;
+}
