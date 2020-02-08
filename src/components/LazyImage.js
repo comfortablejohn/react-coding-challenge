@@ -2,6 +2,7 @@ import React from 'react';
 import './LazyImage.css';
 
 export default function LazyImage({ imageUrl }) {
+    // ref to observe when the image is in viewport
     const imageRef = React.useRef();
     const [imageSrc, setImageSrc] = React.useState();
     const [observer, setObserver] = React.useState();
@@ -15,7 +16,8 @@ export default function LazyImage({ imageUrl }) {
     }
 
     function handleIntersect(entry) {
-        if (entry[0].isIntersecting && imageUrl && !imageSrc) {
+        // load image if the url is provided and hasn't already loaded
+        if (entry.length && entry[0].isIntersecting && imageUrl && !imageSrc) {
             loadImage(imageUrl);
         }
     }
@@ -25,13 +27,11 @@ export default function LazyImage({ imageUrl }) {
             let _observer = new IntersectionObserver(handleIntersect, {
                 root: null,
                 rootMargin: '160px',
-                threshold: 0,
+                threshold: 0
             });
             _observer.observe(imageRef.current);
             setObserver(_observer);
         }
     }, [imageRef.current]);
-    return (
-        <img className={imgClassname} src={imageSrc} ref={imageRef} />
-    )
+    return <img className={imgClassname} src={imageSrc} ref={imageRef} />;
 }
