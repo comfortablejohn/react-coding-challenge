@@ -1,5 +1,5 @@
 import React from 'react'; 
-import Series from '../screens/Series';
+import Category from '../screens/Category';
 import Home from '../screens/Home';
 import { screens } from '../utils/constants';
 
@@ -11,12 +11,16 @@ export default function NavProvider({ onChange, children }) {
     let screenComponent;
 
     switch (currentScreen) {
+        // only included to illustrate error state
+        case 'SPORTS': 
+            screenComponent = <Category category={'sports'} categoryTitle={'Popular Sports'} />
+            break;
         case screens.SERIES: {
-            screenComponent = <Series />
+            screenComponent = <Category category={'series'} categoryTitle={'Popular Series'} />
             break;
         }
         case screens.MOVIES: {
-            // screenComponent = 
+            screenComponent = <Category category={'movie'} categoryTitle={'Popular Movies'} />
             break;
         }
         case screens.HOME:
@@ -31,9 +35,11 @@ export default function NavProvider({ onChange, children }) {
                 return screens.HOME;
             case '/series':
                 return screens.SERIES;
-                break;
             case '/movies':
                 return screens.MOVIES;
+            // only included to illustrate error state
+            case '/sports':
+                return 'SPORTS';
             default:
                 throw new Error('Attempting to navigate to nonexisting screen.');
         }

@@ -17,7 +17,13 @@ export default function Home() {
             screen: screens.MOVIES,
             title: 'Popular Movies',
             image: '/img/placeholder.png'
-        }
+        },
+        {
+            url: '/sports',
+            screen: 'SPORTS',
+            title: 'Popular Sports',
+            image: '/img/placeholder.png'
+        },
     ];
 
     return (

@@ -1,5 +1,7 @@
 # react-coding-challenge
 
+# Data Fetching
+
 # Images
 ## Lazy Loading
 In order to improve performance on pages with many images (i.e. Series, or Movies),
