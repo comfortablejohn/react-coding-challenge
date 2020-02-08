@@ -1,12 +1,13 @@
 import './Grid.css';
 import React from 'react';
 import Placeholder from '../assets/img/placeholder.png';
+import Link from '../components/Link';
 
 export function Grid({ children }) {
     return <div className="grid gutter">{children}</div>;
 }
 
-export function GridItem({ title, tooltip, children }) {
+export function GridItem({ title, tooltip, url, children }) {
     const style = {
         backgroundImage: `url(${Placeholder})`,
         backgroundPosition: 'center',
@@ -15,12 +16,12 @@ export function GridItem({ title, tooltip, children }) {
 
     return (
         <div title={tooltip} className="grid-item">
-            <a href="#">
+            <Link to={url}>
                 <div className="grid-item--image" style={style}>
                     {children}
                 </div>
                 <div className="grid-item--title">{title}</div>
-            </a>
+            </Link>
         </div>
     );
 }

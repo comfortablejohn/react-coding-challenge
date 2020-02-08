@@ -10,9 +10,7 @@ export default function Series() {
 
     return (
         <Page title={'Popular Series'}>
-            <Grid>
-                {gridItems}
-            </Grid>
+            <Grid>{gridItems}</Grid>
         </Page>
     );
 }
