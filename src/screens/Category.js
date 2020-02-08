@@ -40,7 +40,9 @@ function filter(items, filters) {
 
 export default function Category({ category, categoryTitle }) {
     const [loadingState, setLoadingState] = React.useState(states.LOADING);
-    // from an imagined set of filters
+
+    // from an imagined set of filters - this could be moved out of this
+    // component and passed as prop or used in context
     const [filters, setFilters] = React.useState(defaultFilters);
 
     const [items, setItems] = React.useState([]);

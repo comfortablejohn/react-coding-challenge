@@ -4,6 +4,19 @@
 Since we are only using static assets, I mocked a call to a fetch interface to
 retrieve the feed `json` data.
 
+There is a simulated .5s loading time for data to exemplify the loading states.
+
+I made a decision to request data only after navigating to the category. In
+comparison to loading the entire feed on the home screen, this would reduce
+the payload size in a more realistic scenario. 
+
+## Caching
+I also implemented/simulated some basic caching for category data, i.e. when
+a category is fetched, the items are stored against that category in memory.
+You can see this in effect by navigating e.g. Home -> Series -> Home -> Movies
+-> Home -> Series. The second visit for Series will have no delay due to fetching
+the data.
+
 # Images
 ## Lazy Loading
 In order to improve performance on pages with many images (i.e. Series, or Movies),
