@@ -30,3 +30,10 @@ as per the spec.
 + footer social anchors - hover shows blue svg
 
 + Integrate prop-types
+
++ Loading
+
++ Proper tooltips on hover to display e.g.:
+    + description
+    + seasons
+    + add to lists
