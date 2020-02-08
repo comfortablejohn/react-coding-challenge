@@ -20,6 +20,14 @@ There is a very basic and naive navigation context that manages the active
 screen. Obviously the routes will only work within the runtime of the app,
 given the static nature of the demo (i.e. no server).
 
+React Context was used in this case to avoid prop drilling, giving the `Link`
+component access to the `goTo` function irrespective of its position in the
+tree (as long as it has `NavProvider` as an ancestor).
+
+The current screen component is provided through a render prop to the children.
+This improves composability while still allowing other components such as
+`Header` and `Footer` to have access to the navigation context if required.
+
 I would typically use [https://github.com/ReactTraining/react-router](React Router)
 for routing, but opted for this approach to avoid using third party libraries
 as per the spec.
