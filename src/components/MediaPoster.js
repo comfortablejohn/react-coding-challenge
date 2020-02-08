@@ -20,9 +20,9 @@ import LazyImage from '../components/LazyImage';
 export function MediaPoster({ title, description, images }) {
     // TODO: build urls for different sizes to be used with srcset
 
-    // Use StanCo resize query param for appropriately sized image 
+    // Use StanCo resize query param for appropriately sized image
     const imageUrl = images['Poster Art'].url + '?resize=376px:* 376w';
-    
+
     return (
         <GridItem title={title} tooltip={description}>
             <LazyImage imageUrl={imageUrl} />
