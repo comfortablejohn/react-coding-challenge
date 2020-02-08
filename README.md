@@ -1,6 +1,8 @@
 # react-coding-challenge
 
 # Data Fetching
+Since we are only using static assets, I mocked a call to a fetch interface to
+retrieve the feed `json` data.
 
 # Images
 ## Lazy Loading

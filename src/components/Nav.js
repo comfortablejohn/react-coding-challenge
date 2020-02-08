@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from 'react';
 import Category from '../screens/Category';
 import Home from '../screens/Home';
 import { screens } from '../utils/constants';
@@ -6,21 +6,33 @@ import { screens } from '../utils/constants';
 const NavContext = React.createContext();
 
 export default function NavProvider({ onChange, children }) {
-    const [ currentScreen, setCurrentScreen ] = React.useState(screens.HOME);
+    const [currentScreen, setCurrentScreen] = React.useState(screens.HOME);
 
     let screenComponent;
 
     switch (currentScreen) {
         // only included to illustrate error state
-        case 'SPORTS': 
-            screenComponent = <Category category={'sports'} categoryTitle={'Popular Sports'} />
+        case 'SPORTS':
+            screenComponent = (
+                <Category
+                    category={'sports'}
+                    categoryTitle={'Example Error State'}
+                />
+            );
             break;
         case screens.SERIES: {
-            screenComponent = <Category category={'series'} categoryTitle={'Popular Series'} />
+            screenComponent = (
+                <Category
+                    category={'series'}
+                    categoryTitle={'Popular Series'}
+                />
+            );
             break;
         }
         case screens.MOVIES: {
-            screenComponent = <Category category={'movie'} categoryTitle={'Popular Movies'} />
+            screenComponent = (
+                <Category category={'movie'} categoryTitle={'Popular Movies'} />
+            );
             break;
         }
         case screens.HOME:
@@ -41,7 +53,9 @@ export default function NavProvider({ onChange, children }) {
             case '/sports':
                 return 'SPORTS';
             default:
-                throw new Error('Attempting to navigate to nonexisting screen.');
+                throw new Error(
+                    'Attempting to navigate to nonexisting screen.'
+                );
         }
     }
 
@@ -52,7 +66,7 @@ export default function NavProvider({ onChange, children }) {
             onChange(screen);
         }
 
-        // do some clean up on the url 
+        // do some clean up on the url
         let newUrl = url.replace('/', '');
         if (newUrl == 'home') {
             newUrl = '';
@@ -72,15 +86,17 @@ export default function NavProvider({ onChange, children }) {
         // cleanup
         return () => {
             window.removeEventListener('popstate', handlePopState);
-        }
+        };
     }, []);
 
     return (
-        <NavContext.Provider value={{
-            goTo,
-            screenComponent,
-            currentScreen,
-        }}>
+        <NavContext.Provider
+            value={{
+                goTo,
+                screenComponent,
+                currentScreen
+            }}
+        >
             {children(screenComponent)}
         </NavContext.Provider>
     );

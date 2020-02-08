@@ -21,9 +21,9 @@ export default function Home() {
         {
             url: '/sports',
             screen: 'SPORTS',
-            title: 'Popular Sports',
+            title: 'Example Error State',
             image: '/img/placeholder.png'
-        },
+        }
     ];
 
     return (
