@@ -7,7 +7,7 @@ export default function Page({ title, children }) {
 
     return (
         <main className="container-inner">
-            <div className="header-page">
+            <div className="header-page gutter">
                 <h2>{title}</h2>
             </div>
             {children}

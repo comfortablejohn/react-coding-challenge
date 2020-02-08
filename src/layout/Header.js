@@ -1,9 +1,8 @@
 import React from 'react';
-import { screens } from '../utils/constants';
 
 export default function Header() {
     return (
-        <header className="header-main">
+        <header className="header-main gutter">
             <h1 className="header-main__logo">DEMO Streaming</h1>
             <nav>
                 <ul>
