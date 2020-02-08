@@ -30,7 +30,7 @@ The current screen component is provided through a render prop to the children.
 This improves composability while still allowing other components such as
 `Header` and `Footer` to have access to the navigation context if required.
 
-I would typically use [https://github.com/ReactTraining/react-router](React Router)
+I would typically use [React Router](https://github.com/ReactTraining/react-router)
 for routing, but opted for this approach to avoid using third party libraries
 as per the spec.
 
