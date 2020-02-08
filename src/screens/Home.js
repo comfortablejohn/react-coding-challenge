@@ -3,7 +3,7 @@ import { Grid, GridItem } from '../layout/Grid';
 import Page from '../layout/Page';
 
 export default function Home() {
-    const items = [
+    const categories = [
         {
             url: 'series',
             title: 'Popular Series',
@@ -19,7 +19,7 @@ export default function Home() {
     return (
         <Page title={'Popular Titles'}>
             <Grid>
-                {items.map((item, i) => <GridItem key={`grid-item-${i}`} {...item} />)}
+                {categories.map((item, i) => <GridItem key={`grid-item-${i}`} {...item} />)}
             </Grid>
         </Page>
     );
