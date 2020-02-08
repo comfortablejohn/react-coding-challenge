@@ -66,6 +66,8 @@ export default function Footer() {
         'Manage Account'
     ];
 
+    const year = (new Date()).getFullYear();
+
     return (
         <footer className="footer-main gutter">
             <nav className="footer-main__nav">
@@ -77,7 +79,9 @@ export default function Footer() {
                     ))}
                 </ul>
             </nav>
-            <div className="footer-main__disclaimer"></div>
+            <div className="footer-main__disclaimer">
+                Copyright &copy; {year} DEMO Streaming. All Rights Reserved.
+            </div>
             <div className="footer-main__socials">
                 <Socials />
             </div>

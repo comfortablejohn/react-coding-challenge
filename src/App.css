@@ -52,3 +52,7 @@ ul li {
 img {
     border: none;
 }
+
+.hidden {
+    display: none;
+}
