@@ -1,3 +1,4 @@
+import './Page.css';
 import React from 'react';
 
 export default function Page({ title, children }) {

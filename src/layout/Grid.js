@@ -1,3 +1,4 @@
+import './Grid.css';
 import React from 'react';
 
 export function Grid({ children }) {

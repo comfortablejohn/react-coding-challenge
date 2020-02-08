@@ -1,0 +1,12 @@
+.header-main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #018fff;
+    color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-main__logo {
+    color: #fff;
+}

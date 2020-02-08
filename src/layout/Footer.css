@@ -1,0 +1,15 @@
+.footer-main {
+    background-color: #1e1e1e;
+    color: #bdbfa9;
+    flex-shrink: 0;
+}
+
+.footer-main__nav {
+    font-size: 0.8em;
+}
+
+.footer-main__nav li:nth-child(n+2):before {
+    content: "|";
+    padding-left: 10px;
+    padding-right: 10px;
+}
