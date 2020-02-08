@@ -10,6 +10,7 @@ html {
 
 body {
     margin: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 *,
@@ -18,20 +19,44 @@ body {
     box-sizing: inherit;
 }
 
+h1, h2 {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul li {
+    display: inline-block;
+}
+
 /*=============================================
 =                 Layout                      =
 =============================================*/
 
 .container {
-    /* padding-left:  */
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
-main {
+.gutter {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.container-inner {
     flex: 1 0 auto;
 }
 
@@ -40,20 +65,74 @@ main {
 =============================================*/
 
 .header-main {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: #018fff;
     color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .header-main__logo {
     color: #fff;
 }
 
+.header-page {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #404040;
+    color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
 .footer-main {
+    background-color: #1e1e1e;
+    color: #bdbfa9;
     flex-shrink: 0;
+}
+
+.footer-main__nav {
+    font-size: 0.8em;
+}
+
+.footer-main__nav li:nth-child(n+2):before {
+    content: "|";
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 160px);
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 20px;
+    justify-content: space-around;
+
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-item {
+    position: relative;
+    height: 280px;
+}
+
+.grid-item--image img {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; */
+    width: 100%;
+    height: 240px;
+}
+/*=============================================
+=                 Utils                       =
+=============================================*/
+
+.hidden {
+    display: none;
 }
