@@ -46,7 +46,13 @@ export default function NavProvider({ onChange, children }) {
             onChange(screen);
         }
 
-        history.pushState({ screen }, '', `/${screen.toLowerCase()}`);
+        // do some clean up on the url 
+        let newUrl = url.replace('/', '');
+        if (newUrl == 'home') {
+            newUrl = '';
+        }
+
+        history.pushState({ screen }, '', `/${newUrl.replace('/', '')}`);
         setCurrentScreen(screen);
     }
 
