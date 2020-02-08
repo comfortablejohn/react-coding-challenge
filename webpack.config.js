@@ -11,15 +11,21 @@ module.exports = {
     module: {
         rules: [
             { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-            { test: /\.css$/, use: ['style-loader',
-                { loader: 'css-loader', options: { importLoaders: 1 } },
-                { loader: 'postcss-loader', options: {
-                    ident: 'postcss',
-                    plugins: () => [
-                        postcssNormalize()
-                    ]
-                } }
-            ] }
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    { loader: 'css-loader', options: { importLoaders: 1 } },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            plugins: () => [postcssNormalize()]
+                        }
+                    }
+                ]
+            },
+            { test: /\.(png|svg|jpg|gif)$/, use: [ 'file-loader' ] },
         ]
     },
     devServer: {

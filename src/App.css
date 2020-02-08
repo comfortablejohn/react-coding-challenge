@@ -48,3 +48,7 @@ ul li {
     padding-left: 60px;
     padding-right: 60px;
 }
+
+img {
+    border: none;
+}

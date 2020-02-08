@@ -19,7 +19,7 @@ export default function Series() {
     const gridItems = series.map((item, i) => 
         <GridItem
             key={`grid-${i}`}
-            image={item.images['Poster Art'].url}
+            imageUrl={item.images['Poster Art'].url}
             title={item.title}
         />
     );

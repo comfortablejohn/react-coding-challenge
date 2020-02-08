@@ -16,6 +16,11 @@
     height: 280px;
 }
 
+.grid-item--image {
+    background-color: #1e1e1e;
+    height: 240px;
+}
+
 .grid-item--image img {
     /* position: absolute;
     top: 0;
