@@ -1,4 +1,13 @@
 # react-coding-challenge
+```
+Submission Author: Monty Galloway
+Date: 09/02/2020
+```
+
+Built files are located in `/dist`. The demo may be run by pointing your browser
+to `index.html`. As this is a static demo, browser history is not utilised,
+so to get to the `Home` screen from a category, you may use the "Demo Streaming"
+logo to navigate there.
 
 # Data Fetching
 Since we are only using static assets, I mocked a call to a fetch interface to
