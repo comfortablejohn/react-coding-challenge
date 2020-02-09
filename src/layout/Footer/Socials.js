@@ -72,13 +72,13 @@ export default function Socials() {
                 </SocialLink>
             </li>
             <li>
-                <SocialLink image={Instagram} imageHover={InstagramBlue}>
-                    <span className="hidden">Follow Stan on Instagram</span>
+                <SocialLink image={Twitter} imageHover={TwitterBlue}>
+                    <span className="hidden">Follow Stan on Twitter</span>
                 </SocialLink>
             </li>
             <li>
-                <SocialLink image={Twitter} imageHover={TwitterBlue}>
-                    <span className="hidden">Follow Stan on Twitter</span>
+                <SocialLink image={Instagram} imageHover={InstagramBlue}>
+                    <span className="hidden">Follow Stan on Instagram</span>
                 </SocialLink>
             </li>
         </ul>

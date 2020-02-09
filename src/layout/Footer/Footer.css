@@ -15,7 +15,7 @@
     justify-content: space-between;
 }
 
-.footer-main__socials ul li:not(:first-child) {
+.footer-main__socials ul.ul-socials li:not(:first-child) {
     padding-left: 20px;
 }
 
@@ -51,6 +51,14 @@
     .footer-main__socials li:not(:first-child) {
         padding-top: 20px;
     }
+
+    .ul-stores {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 @media (min-width: 812px) {
@@ -63,11 +71,14 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+    ul.ul-stores li:not(:first-child) {
+        padding-left: 20px; 
+    }
 }
 
 .ul-socials__icon {
-    height: 43px;
-    width: 38px;
+    height: 30px;
+    width: 28px;
     display: block;
     background-position: center;
     background-repeat: no-repeat;
