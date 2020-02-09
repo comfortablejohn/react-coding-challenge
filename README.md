@@ -34,8 +34,9 @@ to ensure an aesthetic resolution.
 
 # Navigation
 There is a very basic and naive navigation context that manages the active 
-screen. Obviously the routes will only work within the runtime of the app,
-given the static nature of the demo (i.e. no server).
+screen. I initially was using `window.history` to emulate routes, however
+due to the static nature of the demo this violates cross origin security
+requirements, so I have removed that functionality.
 
 React Context was used in this case to avoid prop drilling, giving the `Link`
 component access to the `goTo` function irrespective of its position in the

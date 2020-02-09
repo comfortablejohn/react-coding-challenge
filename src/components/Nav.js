@@ -72,7 +72,8 @@ export default function NavProvider({ onChange, children }) {
             newUrl = '';
         }
 
-        history.pushState({ screen }, '', `/${newUrl.replace('/', '')}`);
+        // removed to prevent cross origin errors in static example distribution
+        // history.pushState({ screen }, '', `/${newUrl.replace('/', '')}`);
         setCurrentScreen(screen);
     }
 
