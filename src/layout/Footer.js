@@ -1,9 +1,12 @@
 import './Footer.css';
 import React from 'react';
+import AppStoreSVG from '../assets/app-store.svg';
+import PlayStoreSVG from '../assets/play-store.svg';
+import WindowsStoreSVG from '../assets/windows-store.svg';
 
 function Socials() {
     return (
-        <ul>
+        <ul className="ul-socials">
             <li>
                 <a href="#">
                     <svg
@@ -56,6 +59,16 @@ function Socials() {
     );
 }
 
+function Stores() {
+    return (
+        <ul className="ul-stores">
+            <li><img src={AppStoreSVG} /></li>
+            <li><img src={PlayStoreSVG} /></li>
+            <li><img src={WindowsStoreSVG} height="40px" width="120px" /></li>
+        </ul>
+    );
+}
+
 export default function Footer() {
     const links = [
         'Home',
@@ -84,6 +97,7 @@ export default function Footer() {
             </div>
             <div className="footer-main__socials">
                 <Socials />
+                <Stores />
             </div>
             <div className="footer-main__apps"></div>
         </footer>

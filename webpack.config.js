@@ -1,5 +1,4 @@
 const path = require('path');
-const postcssNormalize = require('postcss-normalize');
 
 module.exports = {
     mode: 'development',
