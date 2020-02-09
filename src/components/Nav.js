@@ -2,6 +2,7 @@ import React from 'react';
 import Category from '../screens/Category';
 import Home from '../screens/Home';
 import { screens } from '../utils/constants';
+import api from '../services/api';
 
 const NavContext = React.createContext();
 
@@ -10,6 +11,8 @@ export default function NavProvider({ onChange, children }) {
 
     let screenComponent;
 
+    const fetch = api.fetchInCategory;
+
     switch (currentScreen) {
         // only included to illustrate error state
         case 'SPORTS':
@@ -17,6 +20,7 @@ export default function NavProvider({ onChange, children }) {
                 <Category
                     category={'sports'}
                     categoryTitle={'Example Error State'}
+                    fetch={fetch}
                 />
             );
             break;
@@ -25,13 +29,14 @@ export default function NavProvider({ onChange, children }) {
                 <Category
                     category={'series'}
                     categoryTitle={'Popular Series'}
+                    fetch={fetch}
                 />
             );
             break;
         }
         case screens.MOVIES: {
             screenComponent = (
-                <Category category={'movie'} categoryTitle={'Popular Movies'} />
+                <Category category={'movie'} categoryTitle={'Popular Movies'} fetch={fetch} />
             );
             break;
         }
