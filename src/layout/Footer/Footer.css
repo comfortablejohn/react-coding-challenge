@@ -64,3 +64,12 @@
         padding-right: 10px;
     }
 }
+
+.ul-socials__icon {
+    height: 43px;
+    width: 38px;
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
