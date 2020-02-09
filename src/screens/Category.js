@@ -13,7 +13,7 @@ const states = {
 
 const defaultFilters = {
     limit: 21,
-    year: 2010,
+    year: 2010
 };
 
 function filter(items, filters) {
@@ -26,13 +26,13 @@ function filter(items, filters) {
 
     // sort alphanumerically before filtering
     filtered.sort((a, b) => a.title > b.title);
-    
+
     if (defaults.year) {
         filtered = filtered.filter(item => item.releaseYear >= filters.year);
     }
 
     if (defaults.limit) {
-        filtered = filtered.slice(defaults.from || 0, filters.limit)
+        filtered = filtered.slice(defaults.from || 0, filters.limit);
     }
 
     return filtered;
@@ -41,12 +41,12 @@ function filter(items, filters) {
 /**
  * Display media within a category. Fetches items on mount and displays
  * filtered items in grid.
- * 
+ *
  * @param {Object} params
  * @param {string} params.category  category to load and display items for
  * @param {string} params.categoryTitle displayed on category screen
  */
-export default function Category({ category, categoryTitle }) {
+export default function Category({ category, categoryTitle, fetch }) {
     const [loadingState, setLoadingState] = React.useState(states.LOADING);
 
     // from an imagined set of UI filters - this could be moved out of this
@@ -66,13 +66,24 @@ export default function Category({ category, categoryTitle }) {
 
     // handle loading of category, setting load states appropriately
     React.useEffect(() => {
+        // prevent memory leak if component unmounts before fetch resolves/rejects
+        let subscribed = true;
         setLoadingState(states.LOADING);
-        api.fetchInCategory(category)
+        fetch(category)
             .then(fetchedItems => {
-                setItems(fetchedItems);
-                setLoadingState(states.LOADED);
+                if (subscribed) {
+                    setItems(fetchedItems);
+                    setLoadingState(states.LOADED);
+                }
             })
-            .catch(() => setLoadingState(states.ERROR));
+            .catch(() => {
+                if (subscribed) {
+                    setLoadingState(states.ERROR);
+                }
+            });
+
+        // cleanup by unsubscribing on unmount
+        return () => (subscribed = false);
     }, [category]);
 
     // render grid items
