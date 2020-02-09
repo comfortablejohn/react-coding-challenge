@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "webpack --config webpack.config.js",
+    "prod": "webpack --config webpack.config.js --mode=production",
     "serve": "webpack-dev-server",
     "test": "jest"
   },
