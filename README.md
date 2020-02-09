@@ -46,20 +46,32 @@ The current screen component is provided through a render prop to the children.
 This improves composability while still allowing other components such as
 `Header` and `Footer` to have access to the navigation context if required.
 
-I would typically use [React Router](https://github.com/ReactTraining/react-router)
-for routing, but opted for this approach to avoid using third party libraries
-as per the spec.
+# Tests
+I have only written tests for one component (`Category`). While I realise
+this is limited, I hope it shows that I have an understanding of testing
+patterns, including mocking through dependency injection to make 
+units more testable (e.g. mocking the `fetch` call). Focussing on TDD is
+one of my current goals.
+
+## Improvements
+There are a few components which could be refactored to be more testable, an
+indication that there are cross-cutting concerns.
+
+The `Nav` context pattern was probably a bit convoluted for this example, and
+felt overkill once I removed the `history` updates. A simple switch and state
+in the `Home` component would have sufficed.
 
 # TODO
+Below is a list of features or implementation details that I would have used
+given more time, or if not attempting to keep in theme with avoiding use of 
+third party libraries.
 
-+ style - anchor hover state
-+ footer social anchors - hover shows blue svg
-
-+ Integrate prop-types
-
-+ Loading
-
-+ Proper tooltips on hover to display e.g.:
++ More testing coverage
++ Redux for state management
++ Use [React Router](https://github.com/ReactTraining/react-router) for routing / navigation
++ Integrate prop-types for component props
++ Proper tooltips on poster component hover to display e.g.:
     + description
     + seasons
     + add to lists
++ Mobile menu, with hamburger menu CTA
