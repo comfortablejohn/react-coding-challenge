@@ -53,7 +53,7 @@ patterns, including mocking through dependency injection to make
 units more testable (e.g. mocking the `fetch` call). Focussing on TDD is
 one of my current goals.
 
-## Improvements
+# Improvements
 There are a few components which could be refactored to be more testable, an
 indication that there are cross-cutting concerns.
 
